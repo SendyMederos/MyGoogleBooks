@@ -1,28 +1,18 @@
-import React from "react"
+import React, { useState, useEffect}from "react"
 import Card from "../components/Card";
 import NavBar from "../components/NavBar";
 import { Container, Row, Col } from "../components/Grid";
-import API from "../utils/API"
+import API from "../utils/LocalAPI"
 
 function Fav() {
+   const [favBooks, setfavBooks] = useState({})
 
-   // let newData = [];
-    const  searchBooks = () => {
-        let x = "harry potter"
-        API.search(x)
-            .then(res => res.data.items.map(result => (
-                    {
-                        title: result.volumeInfo.title,
-                        authors: result.volumeInfo.authors,
-                        image: result.volumeInfo.imageLinks.thumbnail,
-                        description: result.volumeInfo.description,
-                        link: result.volumeInfo.infoLink,
-                        id: res.data.items.indexOf(result) + 1
-                    })))
-                .then(newData => console.log(newData))
+    const  setBooks = () => {
+        API.getBooks()
+            .then(res => setfavBooks = res)
         .catch(error => alert(error))
 }
-searchBooks();
+setBooks();
 return (
     <Container>
         <NavBar />
