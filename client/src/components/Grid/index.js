@@ -1,19 +1,14 @@
 import React from "react";
 
-// Exporting the Container, Row, and Col components from this file
-
-// This Container component allows us to use a bootstrap container without worrying about class names
+// Exporting the Wrapper, FixedWrapper, Container, Row, and Col components from this file
 export function Container({children }) {
   return <div className="">{children}</div>;
 }
 
-// This Row component lets us use a bootstrap row without having to think about class names
-export function Row({ fluid, children }) {
+export function Row({children }) {
   return <div className= "mx-5 my-3" >{children}</div>;
 }
 
-// This Col component lets us size bootstrap columns with less syntax
-// e.g. <Col size="md-12"> instead of <div className="col-md-12">
 export function Col({ size, children }) {
   return (
     <div
@@ -25,4 +20,8 @@ export function Col({ size, children }) {
       {children}
     </div>
   );
+}
+
+export  function Wrapper({ children }) {
+  return <div style={{ marginLeft: "10%" }} className="wrapper">{children}</div>;
 }
