@@ -24,7 +24,7 @@ function Search() {
                         image: result.volumeInfo.imageLinks.thumbnail,
                         description: result.volumeInfo.description,
                         link: result.volumeInfo.infoLink,
-                        id: res.data.items.indexOf(result) + 1
+                        key: res.data.items.indexOf(result) + 1
                     })
                 )); console.log(books)
             }).catch(error => alert(error))
