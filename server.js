@@ -22,7 +22,7 @@ app.get("*", (req, res) => {
   res.sendFile(path.join(__dirname, "./client/build/index.html"));
 });
 // Connect to the Mongo DB
-mongoose.connect(process.env.ATLAS_URI || "mongodb://localhost/googlebooks", {useNewUrlParser:true, useUnifiedTopology:true});
+mongoose.connect(process.env.ATLAS_URI , {useNewUrlParser:true, useUnifiedTopology:true});
 
 app.listen(PORT, () => {
   console.log(`🌎 ==> API server now on port ${PORT}!`);
