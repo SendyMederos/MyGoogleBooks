@@ -26,8 +26,8 @@ function Card(props) {
         <div className="card-header text-white bg-dark mb-3">
             <h5 className="card-title">{props.title}</h5>
             <div style={styles.btn}>
-                <a type="button" className="btn btn-secondary btn-sm active mr-2" href={props.link}> View </a>
-                {!props.show ? <button className="btn btn-secondary btn-sm active mr-2" onClick={() => props.saveBook(props)}> Save </button> : ""}
+                <a type="button" className="btn btn-secondary btn-sm active mr-2" target={"_blank"} href={props.link}> View </a>
+                {!props.show ? <button className="btn btn-secondary btn-sm active mr-2" onClick={() => props.saveBook(props, props.index)}> Save </button> : ""}
                 {props.show ? <button className="btn btn-secondary btn-sm active mr-2" onClick={() => props.deleteBook(props._id)}> Delete </button> : ""}
             </div>
         </div>
